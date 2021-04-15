@@ -1,0 +1,10 @@
+﻿  IntVector.cpp
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVector.cpp(43,20): warning C4930: 'IntVectorIterator beginIterator(IntVector *)': prototyped function not called (was a variable definition intended?)
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVector.cpp(47,20): warning C4930: 'IntVectorIterator endIterator(IntVector *)': prototyped function not called (was a variable definition intended?)
+  IntVectorIterator.cpp
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVectorIterator.cpp(5,83): error C2572: 'IntVectorIterator::IntVectorIterator': redefinition of default argument: parameter 1
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVectorIterator.h(17): message : see declaration of 'IntVectorIterator::IntVectorIterator'
+  Main.cpp
+  Generating Code...
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVector.cpp(44): error C4716: 'IntVector::begin': must return a value
+C:\Users\SamCross\Documents\Uni Work\DSP\ProblemSet2\IntVector.cpp(48): error C4716: 'IntVector::end': must return a value
