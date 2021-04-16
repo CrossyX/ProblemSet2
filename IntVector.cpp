@@ -2,6 +2,7 @@
 #include <cstddef>
 #include "IntSorter.h"
 #include "IntVectorIterator.h"
+#include <stdexcept>
 
 using namespace std;
 
@@ -14,6 +15,11 @@ IntVector::IntVector(const int aArrayOfIntegers[], size_t aNumberOfElements)
 	{ 
 		fElements[i] = aArrayOfIntegers[i]; 
 	} 
+}
+
+IntVector::~IntVector()
+{
+	delete[] fElements;
 }
 
 size_t IntVector::size() const
@@ -30,19 +36,24 @@ void IntVector::swap(size_t aSourceIndex, size_t aTargetIndex)
 
 void IntVector::sort(const IntSorter& aSorter)
 {
-	
+	IntSorter *intSorter = new IntSorter();
 }
 
 const int IntVector::operator[](size_t aIndex) const
 {
-	return fElements[aIndex];
+	if (aIndex < fNumberOfElements)
+	{ 
+		return fElements[aIndex];
+	}    
+	throw 
+		out_of_range("Invalid index.");
 }
 
 IntVectorIterator IntVector::begin() const
 {
-	IntVectorIterator beginIterator(IntVector * vector);
+	return IntVectorIterator(*this);
 }
 IntVectorIterator IntVector::end() const
 {
-	IntVectorIterator endIterator(IntVector *vector);
+	return IntVectorIterator(*this, size());
 }

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//#define P1
+#define P1
 //#define P2
 
 #ifdef P1

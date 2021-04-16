@@ -1,9 +1,9 @@
 #include "CocktailShakerSort.h"
 
-using namespace std
+using namespace std;
 
-void operator()(IntVector& aContainer) const override
-{
-
-}
+//void operator()(IntVector& aContainer) const override
+//{
+//
+//}
 
