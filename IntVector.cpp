@@ -29,9 +29,16 @@ size_t IntVector::size() const
 
 void IntVector::swap(size_t aSourceIndex, size_t aTargetIndex)
 {
-	size_t tempIndex = aSourceIndex;
-	aSourceIndex = aTargetIndex;
-	aTargetIndex = tempIndex;
+	if (aSourceIndex < fNumberOfElements && aTargetIndex < fNumberOfElements)
+	{
+		size_t tempIndex = fElements[aSourceIndex];
+		fElements[aSourceIndex] = fElements[aTargetIndex];
+		fElements[aTargetIndex] = tempIndex;
+
+		return;
+	}
+	throw
+		out_of_range("Invalid index(es).");
 }
 
 void IntVector::sort(const IntSorter& aSorter)

@@ -34,6 +34,7 @@ void runP1()
     {
         int lValue = lVector[lArrayLength];
 
+        cout << "lValue: " << lValue;
         cerr << "We should not see " << lValue << " here!" << endl;
     }
     catch (out_of_range e)
