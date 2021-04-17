@@ -1,33 +1,33 @@
 #include "CocktailShakerSort.h"
+#include "IntVector.h"
 
 using namespace std;
 
 void CocktailShakerSort::operator()(IntVector& aContainer) const 
 {
-	// Pseudocode
-	// 	   
-	// beginIndex = 0
-	//endIndex = n - 1
+	int beginIndex = 0;
+	int endIndex = aContainer.size() - 1;
 
-	// while beginIndex < endIndex
-	// do
-		// for i = beginIndex to endIndex - 1
-		// do
-			// if a[i] > a[i+1]
-				// a[j] :=: a[j+1]
-			// end
-		// end
+	while (beginIndex < endIndex)
+	{
+		for (int i = beginIndex; i < endIndex - 1; i++)
+		{
+			if (aContainer[i] > aContainer[i + 1])
+			{
+				aContainer.swap(i, i + 1);
+			}
+		}
 
-		// endIndex = endIndex - 1
-	
-		// for i = endIndex down to beginIndex + 1
-		// do
-			// if a[i] < a[i-1]
-				// a[i] :=: a[i-1]
-			// end
-		// end
+		endIndex -= 1;
 
-		// beginIndex = beginIndex + 1
-	// end
+		for (int i = endIndex; i > beginIndex + 1; i--)
+		{
+			if (aContainer[i] < aContainer[i - 1])
+			{
+				aContainer.swap(i, i - 1);
+			}
+		}
+
+		beginIndex += 1;
+	}
 }
-
