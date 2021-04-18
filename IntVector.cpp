@@ -43,7 +43,7 @@ void IntVector::swap(size_t aSourceIndex, size_t aTargetIndex)
 
 void IntVector::sort(const IntSorter& aSorter)
 {
-	IntSorter *intSorter = new IntSorter();
+	aSorter(*this);
 }
 
 const int IntVector::operator[](size_t aIndex) const

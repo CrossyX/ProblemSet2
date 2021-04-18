@@ -10,8 +10,11 @@ void CocktailShakerSort::operator()(IntVector& aContainer) const
 
 	while (beginIndex < endIndex)
 	{
-		for (int i = beginIndex; i < endIndex - 1; i++)
+		for (int i = beginIndex; i < endIndex; i++)
 		{
+			int a = aContainer[i];
+			int b = aContainer[i + 1];
+
 			if (aContainer[i] > aContainer[i + 1])
 			{
 				aContainer.swap(i, i + 1);
@@ -20,8 +23,11 @@ void CocktailShakerSort::operator()(IntVector& aContainer) const
 
 		endIndex -= 1;
 
-		for (int i = endIndex; i > beginIndex + 1; i--)
+		for (int i = endIndex; i > beginIndex; i--)
 		{
+			int a = aContainer[i];
+			int b = aContainer[i - 1];
+
 			if (aContainer[i] < aContainer[i - 1])
 			{
 				aContainer.swap(i, i - 1);
